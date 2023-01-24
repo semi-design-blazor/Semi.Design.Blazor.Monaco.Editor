@@ -13,7 +13,19 @@
   * 支持语法高亮
   * 支持自定义扩展
 
+
 ## 基本使用
+
+添加css引用
+`server`模式 需要将引用添加到`_Host.cshtml` 文件中 `wasm`模式需要添加到`index.html`中
+```
+<script>
+        var require = { paths: { 'vs': 'https://cdn.masastack.com/npm/monaco-editor/0.34.1/min/vs' } };
+</script>
+<script src="https://cdn.masastack.com/npm/monaco-editor/0.34.1/min/vs/loader.js"></script>
+<script src="https://cdn.masastack.com/npm/monaco-editor/0.34.1/min/vs/editor/editor.main.nls.js"></script>
+<script src="https://cdn.masastack.com/npm/monaco-editor/0.34.1/min/vs/editor/editor.main.js"></script>
+```
 
 ```html
 <SMonacoEditor @ref="_monacoEditor"/>
