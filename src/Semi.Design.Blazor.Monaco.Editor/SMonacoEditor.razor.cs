@@ -98,7 +98,12 @@ public partial class SMonacoEditor : IAsyncDisposable
                 itemOption.items);
         }
 
-        var value = await InitMonacoHandler?.Invoke();
+        object? value = null;
+        if(InitMonacoHandler != null)
+        {
+            value = await InitMonacoHandler.Invoke();
+        }
+
         if (value != null)
         {
             Monaco = await Module.Init(Id, value);

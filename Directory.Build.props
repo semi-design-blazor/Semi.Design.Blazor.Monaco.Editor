@@ -2,7 +2,7 @@
     <PropertyGroup>
         <PackageId>$(AssemblyName)</PackageId>
         <Authors>Semi Design Blazor</Authors>
-		<VersionPrefix>0.0.5</VersionPrefix>
+		<VersionPrefix>0.0.6</VersionPrefix>
         <Copyright>© Semi Design Blazor. All rights reserved.</Copyright>
         <PackageIconUrl>logo.png</PackageIconUrl>
         <RepositoryUrl>https://github.com/semi-design-blazor/Semi.Design.Blazor.Monaco.Editor</RepositoryUrl>
