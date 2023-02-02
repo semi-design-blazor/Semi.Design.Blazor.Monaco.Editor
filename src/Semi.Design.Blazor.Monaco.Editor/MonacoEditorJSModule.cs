@@ -10,7 +10,7 @@ public class MonacoEditorJSModule : IAsyncDisposable
     public MonacoEditorJSModule(IJSRuntime jsRuntime)
     {
         moduleTask = new Lazy<Task<IJSObjectReference>>(() => jsRuntime.InvokeAsync<IJSObjectReference>(
-            "import", "./_content/Semi.Design.CodeRendering/js/editor.js").AsTask());
+            "import", "./_content/Semi.Design.Blazor.Monaco.Editor/js/editor.js").AsTask());
     }
 
     public async ValueTask<IJSObjectReference> Init(string id, object options)
