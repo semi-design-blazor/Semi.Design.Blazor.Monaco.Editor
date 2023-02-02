@@ -7,7 +7,7 @@ namespace Semi.Design.Blazor;
 
 public partial class SMonacoEditor : IAsyncDisposable
 {
-    [Inject] protected MonacoEditorJSModule Module { get; set; }
+    [Inject] public MonacoEditorJSModule Module { get; set; }
 
     [Parameter] public EditorOptions EditorOptions { get; set; } = new();
 
