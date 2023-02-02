@@ -31,7 +31,6 @@ function addKeybindingRule(e)
 }
 
 function registerCompletionItemProvider(language, triggerCharacters, suggestions) {
-    console.log('language', language, 'triggerCharacters', triggerCharacters, "suggestions", suggestions)
     monaco.languages.registerCompletionItemProvider(language, {
         provideCompletionItems: function (model, position) {
             console.log('model', model, 'position', position)

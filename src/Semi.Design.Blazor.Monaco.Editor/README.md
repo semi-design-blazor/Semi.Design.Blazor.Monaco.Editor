@@ -39,7 +39,7 @@
     private string Code;
 
     private void Init(){
-        Code = _monacoEditor.Module.GetValue()
+        Code = _monacoEditor.Module.GetValue(_monacoEditor.Monaco)
     }
 
 }

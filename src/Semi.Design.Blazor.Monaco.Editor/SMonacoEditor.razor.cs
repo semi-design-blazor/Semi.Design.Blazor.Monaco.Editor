@@ -7,7 +7,7 @@ namespace Semi.Design.Blazor;
 
 public partial class SMonacoEditor : IAsyncDisposable
 {
-    [Inject] public MonacoEditorJSModule Module { get; set; }
+    [Inject] protected MonacoEditorJSModule Module { get; set; }
 
     [Parameter] public EditorOptions EditorOptions { get; set; } = new();
 
@@ -45,6 +45,7 @@ public partial class SMonacoEditor : IAsyncDisposable
     [Parameter]
     public SemiDesignBlazorDelegate.InitMonacoComplete? InitMonacoComplete { get; set; }
 
+
     public virtual ElementReference Ref
     {
         get => _ref;
@@ -68,9 +69,9 @@ public partial class SMonacoEditor : IAsyncDisposable
     }
 
     /// <summary>
-    /// monaco
+    /// Monaco
     /// </summary>
-    private IJSObjectReference _monaco;
+    public IJSObjectReference Monaco { get; private set; }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -100,11 +101,11 @@ public partial class SMonacoEditor : IAsyncDisposable
         var value = await InitMonacoHandler?.Invoke();
         if (value != null)
         {
-            _monaco = await Module.Init(Id, value);
+            Monaco = await Module.Init(Id, value);
         }
         else
         {
-            _monaco = await Module.Init(Id, EditorOptions);
+            Monaco = await Module.Init(Id, EditorOptions);
         }
 
         InitMonacoComplete?.Invoke();
