@@ -6,8 +6,6 @@
 
 <h1 align="center">Semi Design Blazor</h1>
 
-<div align="center">
-
 [![Semi Design Blazor](https://img.shields.io/badge/license-MIT-informational)](https://github.com/semi-design-blazor/Semi.Design.Blazor.Monaco.Editor/blob/develop/LICENSE)
 [![Nuget](https://img.shields.io/nuget/v/Semi.Design.Blazor.Monaco.Editor)](https://www.nuget.org/packages/Semi.Design.Blazor.Monaco.Editor)
 [![Nuget](https://img.shields.io/nuget/dt/Semi.Design.Blazor.Monaco.Editor)](https://www.nuget.org/packages/Semi.Design.Blazor.Monaco.Editor)
