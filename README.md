@@ -1,4 +1,4 @@
-<p align="center">
+﻿<p align="center">
   <a href="http://semi-design-blazor.cn/" target="_blank">
     <img alt="Semi Design Blazor" width="150" src="./logo.png">
   </a>
@@ -12,24 +12,13 @@
 [![Nuget](https://img.shields.io/nuget/v/Semi.Design.Blazor.Monaco.Editor)](https://www.nuget.org/packages/Semi.Design.Blazor.Monaco.Editor)
 [![Nuget](https://img.shields.io/nuget/dt/Semi.Design.Blazor.Monaco.Editor)](https://www.nuget.org/packages/Semi.Design.Blazor.Monaco.Editor)
 
-</div>
+# Monaco editor
 
+[English](./README.md) | 简体中文
 
+## sample
 
-# Semi Design Blazor Monaco Editor 
-  * 封装`Monaco` `Blazor`版本
-  * 支持语法提示 
-  * 支持自定义语法提示
-  * 支持语法高亮
-  * 支持自定义扩展
-
-
-## 基本使用
-
-添加css 和 js 引用
-
-`server`模式 需要将引用添加到`_Host.cshtml` 文件中 `wasm`模式需要添加到`index.html`中
-```
+```html
 <script>
         var require = { paths: { 'vs': 'https://cdn.masastack.com/npm/monaco-editor/0.34.1/min/vs' } };
 </script>
@@ -38,9 +27,21 @@
 <script src="https://cdn.masastack.com/npm/monaco-editor/0.34.1/min/vs/editor/editor.main.js"></script>
 ```
 
-```html
-<SMonacoEditor @ref="_monacoEditor"/>
+Inject the MasaBlazorMonacoEditor service
 
+```
+builder.Services.AddSemiDesignBlazorMonacoEditor();
+```
+
+Basic sample code
+
+```csharp
+@using Masa.Blazor
+
+<div style="height:95vh;width:50%;float:left">
+    <SMonacoEditor EditorOptions="Options" @ref="_monacoEditor" />
+</div>
+<button @onclick="GetValue" style="margin:5px;height:25px;font-size:18px;background-color:cornflowerblue;">Get Code</button>
 <code>
     @Code
 </code>
@@ -48,14 +49,22 @@
 @code{
     private SMonacoEditor? _monacoEditor;
     private string Code;
-
-    private void Init(){
-        Code = _monacoEditor.Module.GetValue()
+    private object Options;
+    protected override void OnInitialized()
+    {
+        Options = new
+        {
+            value = """{"value":"masa"}""", // Initial code
+            language = "json", // Syntactic support language
+            automaticLayout = true, // Automatically ADAPTS to parent container size
+            theme = "vs-dark" // monaco theme 
+        };
+        base.OnInitialized();
     }
 
+    private async Task GetValue()
+    {
+        Code = await _monacoEditor.GetValue();
+    }
 }
 ```
-
-# 🎈 协议
-
-Semi UI 使用 [MIT 协议](LICENSE)

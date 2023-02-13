@@ -1,10 +1,22 @@
-﻿# Monaco编辑器
+﻿<p align="center">
+  <a href="http://semi-design-blazor.cn/" target="_blank">
+    <img alt="Semi Design Blazor" width="150" src="./logo.png">
+  </a>
+</p>
 
-English| [简体中文](./README.zh-CN.md)
+<h1 align="center">Semi Design Blazor</h1>
 
-## 示例
+<div align="center">
 
-添加js引用
+[![Semi Design Blazor](https://img.shields.io/badge/license-MIT-informational)](https://github.com/semi-design-blazor/Semi.Design.Blazor.Monaco.Editor/blob/develop/LICENSE)
+[![Nuget](https://img.shields.io/nuget/v/Semi.Design.Blazor.Monaco.Editor)](https://www.nuget.org/packages/Semi.Design.Blazor.Monaco.Editor)
+[![Nuget](https://img.shields.io/nuget/dt/Semi.Design.Blazor.Monaco.Editor)](https://www.nuget.org/packages/Semi.Design.Blazor.Monaco.Editor)
+
+# Monaco editor
+
+[English](./README.md) | 简体中文
+
+## sample
 
 ```html
 <script>
@@ -15,13 +27,13 @@ English| [简体中文](./README.zh-CN.md)
 <script src="https://cdn.masastack.com/npm/monaco-editor/0.34.1/min/vs/editor/editor.main.js"></script>
 ```
 
-注入MasaBlazorMonacoEditor服务
+Inject the MasaBlazorMonacoEditor service
 
 ```
 builder.Services.AddSemiDesignBlazorMonacoEditor();
 ```
 
-基本示例代码
+Basic sample code
 
 ```csharp
 @using Masa.Blazor
@@ -42,10 +54,10 @@ builder.Services.AddSemiDesignBlazorMonacoEditor();
     {
         Options = new
         {
-            value = """{"value":"masa"}""", // 初始代码
-            language = "json", // 语法支持语言
-            automaticLayout = true, //自动适应父容器大小
-            theme = "vs-dark" // monaco主题 
+            value = """{"value":"masa"}""", // Initial code
+            language = "json", // Syntactic support language
+            automaticLayout = true, // Automatically ADAPTS to parent container size
+            theme = "vs-dark" // monaco theme 
         };
         base.OnInitialized();
     }
