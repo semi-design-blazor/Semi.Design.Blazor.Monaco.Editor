@@ -1,7 +1,6 @@
-﻿using Microsoft.JSInterop;
-using Semi.Design.Blazor;
+﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Semi.Design.CodeRendering;
+namespace Semi.Design.Blazor;
 
 public class MonacoEditorJSModule : IAsyncDisposable
 {
@@ -10,13 +9,13 @@ public class MonacoEditorJSModule : IAsyncDisposable
     public MonacoEditorJSModule(IJSRuntime jsRuntime)
     {
         moduleTask = new Lazy<Task<IJSObjectReference>>(() => jsRuntime.InvokeAsync<IJSObjectReference>(
-            "import", "./_content/Semi.Design.Blazor.Monaco.Editor/editor.js").AsTask());
+            "import", "./_content/Semi.Design.Blazor.Monaco.Editor/monaco.editor.js").AsTask());
     }
 
-    public async Task<IJSObjectReference> Init(string id, object options)
+    public async Task<IJSObjectReference> Initialize(string id, object options)
     {
         var module = await moduleTask.Value;
-        return await module.InvokeAsync<IJSObjectReference>("init", id, options);
+        return await module.InvokeAsync<IJSObjectReference>("initialize", id, options);
     }
 
     public async Task<string> GetValue(IJSObjectReference id)
@@ -73,23 +72,37 @@ public class MonacoEditorJSModule : IAsyncDisposable
         await module.InvokeVoidAsync("addKeybindingRules", rule);
     }
 
+    public async Task InvokeVoidAsync(string identifier, params object?[]? args)
+    {
+        var module = await moduleTask.Value;
+        await module.InvokeVoidAsync(identifier,args);
+    }
+
+    public async Task<TValue> InvokeAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.PublicFields | DynamicallyAccessedMemberTypes.PublicProperties)]TValue>(string identifier, params object?[]? args)
+    {
+        var module = await moduleTask.Value;
+        return await module.InvokeAsync<TValue>(identifier, args);
+    }
+
     /// <summary>
-    /// 添加智能提示
+    /// Add smart tips
     /// </summary>
     /// <param name="language"></param>
     /// <param name="triggerCharacters"></param>
     /// <param name="items"></param>
     /// <returns></returns>
-    public async Task RegisterCompletionItemProvider(string language, string[] triggerCharacters,
-        CompletionItem[] items)
+    public async Task RegisterCompletionItemProvider(MonacoRegisterCompletionItemOptions[] options)
     {
         var module = await moduleTask.Value;
-        await module.InvokeVoidAsync("registerCompletionItemProvider", language, triggerCharacters, items);
+        await module.InvokeVoidAsync("registerCompletionItemProvider", options);
     }
 
     public async ValueTask DisposeAsync()
     {
-        moduleTask.Value.Dispose();
-        await Task.CompletedTask;
+        if (moduleTask.IsValueCreated)
+        {
+            var module = await moduleTask.Value;
+            await module.DisposeAsync();
+        }
     }
 }

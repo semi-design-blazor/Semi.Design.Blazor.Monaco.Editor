@@ -1,10 +1,10 @@
-﻿# Monaco编辑器
+﻿# Monaco editor
 
-English| [简体中文](./README.zh-CN.md)
+[English](./README.md) | 简体中文
 
-## 示例
+## sample
 
-添加js引用
+Add js reference
 
 ```html
 <script>
@@ -15,13 +15,13 @@ English| [简体中文](./README.zh-CN.md)
 <script src="https://cdn.masastack.com/npm/monaco-editor/0.34.1/min/vs/editor/editor.main.js"></script>
 ```
 
-注入MasaBlazorMonacoEditor服务
+Inject the MasaBlazorMonacoEditor service
 
 ```
 builder.Services.AddMasaBlazorMonacoEditor();
 ```
 
-基本示例代码
+Basic sample code
 
 ```csharp
 @using Masa.Blazor
@@ -42,10 +42,10 @@ builder.Services.AddMasaBlazorMonacoEditor();
     {
         Options = new
         {
-            value = """{"value":"masa"}""", // 初始代码
-            language = "json", // 语法支持语言
-            automaticLayout = true, //自动适应父容器大小
-            theme = "vs-dark" // monaco主题 
+            value = """{"value":"masa"}""", // Initial code
+            language = "json", // Syntactic support language
+            automaticLayout = true, // Automatically ADAPTS to parent container size
+            theme = "vs-dark" // monaco theme 
         };
         base.OnInitialized();
     }

@@ -1,21 +1,46 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33326.253
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{38EFAECC-F7D5-4DF4-834F-4B4ED40EE311}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Semi.Design.Blazor.Monaco.Editor", "src\Semi.Design.Blazor.Monaco.Editor\Semi.Design.Blazor.Monaco.Editor.csproj", "{425D4308-24EF-4495-9515-52B8FAFC9065}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Semi.Design.Blazor.Monaco.Editor", "src\Semi.Design.Blazor.Monaco.Editor\Semi.Design.Blazor.Monaco.Editor.csproj", "{425D4308-24EF-4495-9515-52B8FAFC9065}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{E21FB48E-747A-48C1-8618-E0E9FB1F3F45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Monaco.Editor", "sample\Sample.Monaco.Editor\Sample.Monaco.Editor.csproj", "{70D58355-EE3B-4BE9-920F-630F8D0B87C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Monaco.Editor.Shared", "sample\Sample.Monaco.Editor.Shared\Sample.Monaco.Editor.Shared.csproj", "{B8BDBC21-522A-4B01-B64E-213F1466D0A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{425D4308-24EF-4495-9515-52B8FAFC9065} = {38EFAECC-F7D5-4DF4-834F-4B4ED40EE311}
-	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{425D4308-24EF-4495-9515-52B8FAFC9065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{425D4308-24EF-4495-9515-52B8FAFC9065}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{425D4308-24EF-4495-9515-52B8FAFC9065}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{425D4308-24EF-4495-9515-52B8FAFC9065}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70D58355-EE3B-4BE9-920F-630F8D0B87C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70D58355-EE3B-4BE9-920F-630F8D0B87C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70D58355-EE3B-4BE9-920F-630F8D0B87C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70D58355-EE3B-4BE9-920F-630F8D0B87C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8BDBC21-522A-4B01-B64E-213F1466D0A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8BDBC21-522A-4B01-B64E-213F1466D0A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8BDBC21-522A-4B01-B64E-213F1466D0A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8BDBC21-522A-4B01-B64E-213F1466D0A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{425D4308-24EF-4495-9515-52B8FAFC9065} = {38EFAECC-F7D5-4DF4-834F-4B4ED40EE311}
+		{70D58355-EE3B-4BE9-920F-630F8D0B87C3} = {E21FB48E-747A-48C1-8618-E0E9FB1F3F45}
+		{B8BDBC21-522A-4B01-B64E-213F1466D0A6} = {E21FB48E-747A-48C1-8618-E0E9FB1F3F45}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2BA6D7E-FF9C-4035-8E66-DB71993B020E}
 	EndGlobalSection
 EndGlobal

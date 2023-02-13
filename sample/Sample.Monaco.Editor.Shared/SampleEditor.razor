@@ -1,0 +1,19 @@
+﻿
+<MMonacoEditor @ref="MonacoEditor" Height="@("600px")" />
+
+<button @onclick="GetCode">加载Code</button>
+
+<code>
+    @Code
+</code>
+
+@code {
+    public string? Code { get; set; }
+
+    private MMonacoEditor? MonacoEditor;
+
+    private async Task GetCode()
+    {
+        Code = await MonacoEditor!.GetValue();            
+    }
+}

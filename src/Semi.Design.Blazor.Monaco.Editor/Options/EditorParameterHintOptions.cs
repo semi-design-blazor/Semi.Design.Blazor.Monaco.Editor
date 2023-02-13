@@ -1,5 +1,4 @@
 ﻿namespace Semi.Design.Blazor;
-
 public class EditorParameterHintOptions
 {
     /// <summary>
