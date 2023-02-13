@@ -1,7 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddMasaBlazorMonacoEditor();
+builder.Services.AddSemiDesignBlazorMonacoEditor();
 
 var app = builder.Build();
 

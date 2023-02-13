@@ -18,7 +18,7 @@ English| [简体中文](./README.zh-CN.md)
 注入MasaBlazorMonacoEditor服务
 
 ```
-builder.Services.AddMasaBlazorMonacoEditor();
+builder.Services.AddSemiDesignBlazorMonacoEditor();
 ```
 
 基本示例代码
@@ -27,7 +27,7 @@ builder.Services.AddMasaBlazorMonacoEditor();
 @using Masa.Blazor
 
 <div style="height:95vh;width:50%;float:left">
-    <MMonacoEditor EditorOptions="Options" @ref="_monacoEditor" />
+    <SMonacoEditor EditorOptions="Options" @ref="_monacoEditor" />
 </div>
 <button @onclick="GetValue" style="margin:5px;height:25px;font-size:18px;background-color:cornflowerblue;">Get Code</button>
 <code>
@@ -35,7 +35,7 @@ builder.Services.AddMasaBlazorMonacoEditor();
 </code>
 
 @code{
-    private MMonacoEditor? _monacoEditor;
+    private SMonacoEditor? _monacoEditor;
     private string Code;
     private object Options;
     protected override void OnInitialized()

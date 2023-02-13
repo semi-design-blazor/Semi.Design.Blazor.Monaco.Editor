@@ -18,7 +18,7 @@ Add js reference
 Inject the MasaBlazorMonacoEditor service
 
 ```
-builder.Services.AddMasaBlazorMonacoEditor();
+builder.Services.AddSemiDesignBlazorMonacoEditor();
 ```
 
 Basic sample code
@@ -27,7 +27,7 @@ Basic sample code
 @using Masa.Blazor
 
 <div style="height:95vh;width:50%;float:left">
-    <MMonacoEditor EditorOptions="Options" @ref="_monacoEditor" />
+    <SMonacoEditor EditorOptions="Options" @ref="_monacoEditor" />
 </div>
 <button @onclick="GetValue" style="margin:5px;height:25px;font-size:18px;background-color:cornflowerblue;">Get Code</button>
 <code>
@@ -35,7 +35,7 @@ Basic sample code
 </code>
 
 @code{
-    private MMonacoEditor? _monacoEditor;
+    private SMonacoEditor? _monacoEditor;
     private string Code;
     private object Options;
     protected override void OnInitialized()

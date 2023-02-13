@@ -23,15 +23,31 @@
 	  <WebpackBuildInputs Remove="js\package-lock.json" />
 	  <WebpackBuildInputs Remove="js\package.json" />
 	  <WebpackBuildInputs Remove="js\tsconfig.json" />
-	  <WebpackBuildInputs Remove="MasaBlazorMonacoEditorExtension.cs" />
 	  <WebpackBuildInputs Remove="README.md" />
 	  <WebpackBuildInputs Remove="README.zh-CN.md" />
+	  <WebpackBuildInputs Remove="SemiDesignBlazorMonacoEditorExtension.cs" />
+	  <WebpackBuildInputs Remove="SMonacoEditor.razor" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Content Include="js\package-lock.json" />
 	  <Content Include="js\package.json" />
 	  <Content Include="js\tsconfig.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="logo.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Update="README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Update="README.zh-CN.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 
 </Project>

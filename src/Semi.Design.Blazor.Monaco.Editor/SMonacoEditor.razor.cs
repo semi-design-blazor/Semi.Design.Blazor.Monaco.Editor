@@ -2,7 +2,7 @@
 
 namespace Semi.Design.Blazor;
 
-public partial class MMonacoEditor
+public partial class SMonacoEditor
 {
     [Inject]
     public MonacoEditorJSModule MonacoEditorJsModule { get; set; }

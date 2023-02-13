@@ -1,5 +1,5 @@
 ﻿
-<MMonacoEditor @ref="MonacoEditor" Height="@("600px")" />
+<SMonacoEditor @ref="MonacoEditor" Height="@("600px")" />
 
 <button @onclick="GetCode">加载Code</button>
 
@@ -10,7 +10,7 @@
 @code {
     public string? Code { get; set; }
 
-    private MMonacoEditor? MonacoEditor;
+    private SMonacoEditor? MonacoEditor;
 
     private async Task GetCode()
     {
